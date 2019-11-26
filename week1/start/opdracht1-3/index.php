@@ -15,6 +15,7 @@ $musicAlbums =
 <body>
 <h1>Music Collection</h1>
 <hr/>
+
 <table>
     <thead>
     <tr>
@@ -35,5 +36,6 @@ $musicAlbums =
     <!--        Loop through all albums in the collection-->
     </tbody>
 </table>
+
 </body>
 </html>
