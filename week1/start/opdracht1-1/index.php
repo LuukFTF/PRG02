@@ -5,22 +5,39 @@
     <title>Programmeren 2 - Week 1 - Opdracht 1.1</title>
 </head>
 <body>
-<h1>Opdracht 1.1 - Datum en tijd</h1>
+
+<h1> Opdracht 1.1 - Datum en tijd [Lucas' Uitwerking]</h1>
 <hr/>
 
-<h2>“het is vandaag 1 november 2019”</h2>
+<p>
+    <?php
+    $nextWeek = time() + (7 * 24 * 60 * 60);
+    // 7 days; 24 hours; 60 mins; 60 secs
+    echo 'Now:       '. date('Y-m-d') ."</br>";
+    echo 'Next Week: '. date('Y-m-d', $nextWeek)  ."</br>";
+    echo date('D-d-S-W-a A-U-T')
+    ?>
+</p>
+
+<h2><?php echo 'Het is vandaag '.date('d F Y') ?></h2>
 <p>
 
 </p>
 
-<h2>“het is vandaag 1/11/2019”</h2>
+<h2><?php echo 'Het is vandaag '.date('Y-m-d') ?></h2>
 <p>
 
 </p>
 
-<h2>“het is nu 2 uur en 30 minuten” (of: “het is nu 6 uur en 1 minuut”)</h2>
+<h2><?php echo 'Het is nu '.date('g').' uur en '.date('i').' minuten' ?></h2>
 <p>
 
 </p>
+
+<h2><?php echo 'De exacte tijd is '.date('H:i:s:u:v e') ?></h2>
+</p>
+
+</p>
+
 </body>
 </html>
