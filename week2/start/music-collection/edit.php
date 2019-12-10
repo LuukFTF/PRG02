@@ -2,15 +2,6 @@
 // Include data (all albums)
 
 
-// Check if form is submitted. This check must be done before
-// the check on GET.
-
-    // 'Post back' with the data from the form.
-
-
-    // Now this data can be stored in de database
-
-
 // IF index is not present in url or value is empty
 
     // redirect to index.php
