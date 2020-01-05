@@ -59,7 +59,7 @@ if (isset($_POST['submit']))
                 <div class="data-field">
                     <label for="artist">Artist</label>
                     <input id="artist" type="text" name="artist"
-                           value="<?= $artist ?>"/>
+                           value="<?= isset($artist) ? $artist : '' ?>"/>
                 </div>
                 <div class="data-field">
                     <label for="album">Album</label>

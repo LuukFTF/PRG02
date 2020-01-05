@@ -1,25 +1,25 @@
 <?php
-//$album = [
-//    'title' => 'The greatest hits',
-//    'artist' => 'Madonna'
-//];
-// STAP 1 db connection
-$db = mysqli_connect(
-    'localhost',
-    'root',
-    '',
-    'music_collection');
+$album = [
+    'title' => 'The greatest hits',
+    'artist' => 'Madonna'
+];
 
-$query = "SELECT * FROM albums WHERE id = 3";
+if(!isset($_GET['id'])) echo 'Er is geen id opgegeven in de url.';
 
-// geeft tabel terug!!!!!!!!!!!!!!!!!!!!!!!!!
-// NIET VERGETEN!!!
-// IETS MET HAMER!!!
-$result =  mysqli_query($db, $query);
+// Stap 1 connectie maken
+$dbConnection =  mysqli_connect('localhost', 'root', '', 'music_collection');
 
-// maakt een associatieve array
-$album = mysqli_fetch_assoc($result);
+$id = $_GET['id'];
+// Stap 2 Query opbouwen
+$query = "SELECT artist, name FROM albums WHERE id=$id";
 
+// JE KRIJGT EEN TABEL TERUG!!!!
+// ONTHOUDEN!!!!
+//
+$result = mysqli_query($dbConnection, $query)
+    or die('Error in query: '.$query);
+
+$album =  mysqli_fetch_assoc($result);
 
 
 ?>
