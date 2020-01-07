@@ -28,6 +28,12 @@ Je kunt voor PHPStorm een [account](https://www.jetbrains.com/shop/eform/student
 - Lokale webserver opzetten met [XAMP](https://www.apachefriends.org/download.html).
 - Om up-to-date te blijven met deze repository heb je [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) nodig.
 
+**Clone maken van deze repository op jouw harde schijf**
+- Ga in PHPStorm naar VCS > Get from Version Control
+- Version control: **Git**
+- Url: **https://github.com/HR-CMGT/PRG02.git**
+- Directory: [Link naar htdocs in xampp folder]/PRG02
+
 ## Huiswerk
 
 Elke week bevat een start en finished folder. In de start folder staan de opdrachten waar jij 

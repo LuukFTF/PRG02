@@ -34,14 +34,14 @@ require_once "includes/music-data.php";
     <tbody>
     <?php foreach ($musicAlbums as $musicAlbum) { ?>
         <tr>
-            <td class="image"><img src="<?= $musicAlbum['image']; ?>" alt="<?= $musicAlbum['name']; ?>"/></td>
+            <td class="image"><img src="images/<?= $musicAlbum['image']; ?>" alt="<?= $musicAlbum['name']; ?>"/></td>
             <td><?= $musicAlbum['id']; ?></td>
             <td><?= $musicAlbum['artist']; ?></td>
             <td><?= $musicAlbum['name']; ?></td>
             <td><?= $musicAlbum['genre']; ?></td>
             <td><?= $musicAlbum['year']; ?></td>
             <td><?= $musicAlbum['tracks']; ?></td>
-            <td><a href="detail.php?id=<?= $musicAlbum['id']; ?>">Details</a></td>
+            <td><a href="details.php?id=<?= $musicAlbum['id']; ?>">Details</a></td>
             <td><a href="edit.php?id=<?= $musicAlbum['id']; ?>">Edit</a></td>
         </tr>
     <?php } ?>

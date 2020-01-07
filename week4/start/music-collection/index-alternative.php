@@ -3,7 +3,7 @@
 require_once "includes/music-data.php";
 ?>
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Music Collection</title>
     <meta charset="utf-8"/>
@@ -22,12 +22,12 @@ require_once "includes/music-data.php";
         <?php foreach ($musicAlbums as $musicAlbum) { ?>
             <div class="album">
                 <div class="cover">
-                    <a href="detail.php?id=<?= $musicAlbum['id']; ?>">
+                    <a href="details.php?id=<?= $musicAlbum['id']; ?>">
                         <img src="<?= $musicAlbum['image']; ?>" alt="<?= $musicAlbum['name']; ?>"/>
                     </a>
                 </div>
                 <div class="links">
-                    <a class="detail" href="detail.php?id=<?= $musicAlbum['id']; ?>"><?= $musicAlbum['artist'] . " - " . $musicAlbum['name']; ?></a>
+                    <a class="detail" href="details.php?id=<?= $musicAlbum['id']; ?>"><?= $musicAlbum['artist'] . " - " . $musicAlbum['name']; ?></a>
                     <a class="edit" href="edit.php?id=<?= $musicAlbum['id']; ?>">Edit</a>
                 </div>
             </div>

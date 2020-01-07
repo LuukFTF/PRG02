@@ -44,16 +44,16 @@ CREATE TABLE IF NOT EXISTS `albums` (
 --
 
 INSERT INTO `albums` (`id`, `name`, `artist`, `genre`, `year`, `tracks`) VALUES
-(1, 'Live At Rome Olympic Stadium', 'Muse', 'Rock', '2013', 13),
-(2, 'Systematic Chaos', 'Dream Theater', 'Progressive Rock', '2007', 8),
-(3, 'United We Are', 'Hardwell', 'House', '2015', 14),
-(4, 'Greatest Hits', 'Robbie Williams', 'Pop', '2010', 57),
-(5, 'Gold Cobra', 'Limp Bizkit', 'Rock / Rap', '2011', 16),
-(6, 'Mijn Ikken', 'Harrie Jekkers', 'Nederpop', '2005', 12),
-(7, 'Love Part 1', 'Angels & Airwaves', 'Rock', '2011', 11),
-(8, 'Unstoppable Momentum', 'Joe Satriani', 'Rock', '2013', 11),
-(9, 'Cut Your Teeth', 'Kygo', 'Chillstep', '2014', 3),
-(10, 'This Is War', '30 Seconds To Mars', 'Rock', '2009', 15);
+(1  , 'Live At Rome Olympic Stadium'  , 'Muse'                , 'Rock'            , '2013', 13),
+(2  , 'Systematic Chaos'              , 'Dream Theater'       , 'Progressive Rock', '2007', 8),
+(3  , 'United We Are'                 , 'Hardwell'            , 'House'           , '2015', 14),
+(4  , 'Greatest Hits'                 , 'Robbie Williams'     , 'Pop'             , '2010', 57),
+(5  , 'Gold Cobra'                    , 'Limp Bizkit'         , 'Rock / Rap'      , '2011', 16),
+(6  , 'Mijn Ikken'                    , 'Harrie Jekkers'      , 'Nederpop'        , '2005', 12),
+(7  , 'Love Part 1'                   , 'Angels & Airwaves'   , 'Rock'            , '2011', 11),
+(8  , 'Unstoppable Momentum'          , 'Joe Satriani'        , 'Rock'            , '2013', 11),
+(9  , 'Cut Your Teeth'                , 'Kygo'                , 'Chillstep'       , '2014', 3),
+(10 , 'This Is War'                   , '30 Seconds To Mars'  , 'Rock'            , '2009', 15);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

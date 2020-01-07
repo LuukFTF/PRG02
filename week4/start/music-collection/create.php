@@ -38,50 +38,50 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Music Collection Create</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-<h1>Create album</h1>
-<?php if (isset($errors)) { ?>
-    <ul class="errors">
-        <?php foreach ($errors as $error) { ?>
-            <li><?= $error; ?></li>
-        <?php } ?>
-    </ul>
-<?php } ?>
+    <h1>Create album</h1>
+    <?php if (isset($errors)) { ?>
+        <ul class="errors">
+            <?php foreach ($errors as $error) { ?>
+                <li><?= $error; ?></li>
+            <?php } ?>
+        </ul>
+    <?php } ?>
 
-<form action="<?= $_SERVER['REQUEST_URI']; ?>" method="post">
-    <div class="data-field">
-        <label for="artist">Artist</label>
-        <input id="artist" type="text" name="artist" value="<?= (isset($artist) ? $artist : ''); ?>"/>
-        <span><?= (isset($errors['artist']) ? $errors['artist'] : '') ?></span>
+    <form action="<?= $_SERVER['REQUEST_URI']; ?>" method="post">
+        <div class="data-field">
+            <label for="artist">Artist</label>
+            <input id="artist" type="text" name="artist" value="<?= (isset($artist) ? $artist : ''); ?>"/>
+            <span><?= (isset($errors['artist']) ? $errors['artist'] : '') ?></span>
+        </div>
+        <div class="data-field">
+            <label for="album">Album</label>
+            <input id="album" type="text" name="album" value="<?= (isset($album) ? $album : ''); ?>"/>
+        </div>
+        <div class="data-field">
+            <label for="genre">Genre</label>
+            <input id="genre" type="text" name="genre" value="<?= (isset($genre) ? $genre : ''); ?>"/>
+        </div>
+        <div class="data-field">
+            <label for="year">Year</label>
+            <input id="year" type="text" name="year" value="<?= (isset($year) ? $year : ''); ?>"/>
+        </div>
+        <div class="data-field">
+            <label for="tracks">Tracks</label>
+            <input id="tracks" type="number" name="tracks" value="<?= (isset($tracks) ? $tracks : ''); ?>"/>
+        </div>
+        <div class="data-submit">
+            <input type="submit" name="submit" value="Save"/>
+        </div>
+    </form>
+    <div>
+        <a href="index.php">Go back to the list</a>
     </div>
-    <div class="data-field">
-        <label for="album">Album</label>
-        <input id="album" type="text" name="album" value="<?= (isset($album) ? $album : ''); ?>"/>
-    </div>
-    <div class="data-field">
-        <label for="genre">Genre</label>
-        <input id="genre" type="text" name="genre" value="<?= (isset($genre) ? $genre : ''); ?>"/>
-    </div>
-    <div class="data-field">
-        <label for="year">Year</label>
-        <input id="year" type="text" name="year" value="<?= (isset($year) ? $year : ''); ?>"/>
-    </div>
-    <div class="data-field">
-        <label for="tracks">Tracks</label>
-        <input id="tracks" type="number" name="tracks" value="<?= (isset($tracks) ? $tracks : ''); ?>"/>
-    </div>
-    <div class="data-submit">
-        <input type="submit" name="submit" value="Save"/>
-    </div>
-</form>
-<div>
-    <a href="index.php">Go back to the list</a>
-</div>
 </body>
 </html>

@@ -11,7 +11,7 @@ $album = $musicAlbums[$albumId];
 //TODO: Handle POST data & store in DB
 ?>
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Music Collection Edit</title>
     <meta charset="utf-8"/>
