@@ -24,14 +24,28 @@ class AlbumHandler extends BaseHandler
      */
     private $formData;
 
+    /**
+     * @var Database
+     */
+    private $db;
+
+    /**
+     * AlbumHandler constructor.
+     * 
+     * @param $templateName
+     * @throws \ReflectionException
+     */
+    public function __construct($templateName)
+    {
+        parent::__construct($templateName);
+        $this->db = (new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME))->getConnection();
+    }
+
     protected function index()
     {
-        //Init the database
-        $db = (new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME))->getConnection();
-
         //Create new instance of MusicCollection & set albums
         $albumCollection = new Collection();
-        $albumCollection->add(Album::getAll($db));
+        $albumCollection->add(Album::getAll($this->db));
 
         //Return formatted data
         $this->renderTemplate([
@@ -67,16 +81,13 @@ class AlbumHandler extends BaseHandler
             //Set user id in Album
             $this->album->user_id = $this->session->get('user')->id;
 
-            //Init the database
-            $db = (new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME))->getConnection();
-
             //Save the record to the db
-            if (Album::add($this->album, $db)) {
+            if (Album::add($this->album, $this->db)) {
                 $success = "Your new album has been added to the database!";
                 //Override to see a new empty form
                 $this->album = new Album();
             } else {
-                $this->logger->error(new \Exception("DB Error: {$db->errorInfo()}"));
+                $this->logger->error(new \Exception("DB Error: {$this->db->errorInfo()}"));
                 $this->errors[] = "Whoops, something went wrong adding the album";
             }
         }
@@ -93,11 +104,8 @@ class AlbumHandler extends BaseHandler
     protected function edit()
     {
         try {
-            //Init the database
-            $db = (new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME))->getConnection();
-
             //Get the record from the db & execute POST logic
-            $this->album = Album::getById($_GET['id'], $db);
+            $this->album = Album::getById($_GET['id'], $this->db);
             $this->executePostHandler();
 
             //Database magic when no errors are found
@@ -115,10 +123,10 @@ class AlbumHandler extends BaseHandler
                 }
 
                 //Save the record to the db
-                if ($this->album->update($db)) {
+                if ($this->album->update($this->db)) {
                     $success = "Your album has been updated in the database!";
                 } else {
-                    $this->logger->error(new \Exception("DB Error: {$db->errorInfo()}"));
+                    $this->logger->error(new \Exception("DB Error: {$this->db->errorInfo()}"));
                     $this->errors[] = "Whoops, something went wrong updating the album";
                 }
             }
@@ -141,12 +149,9 @@ class AlbumHandler extends BaseHandler
 
     protected function detail()
     {
-        //Init the database
-        $db = (new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME))->getConnection();
-
         try {
             //Get the records from the db
-            $album = Album::getById($_GET['id'], $db);
+            $album = Album::getById($_GET['id'], $this->db);
 
             //Default page title
             $pageTitle = $album->name;
@@ -166,12 +171,9 @@ class AlbumHandler extends BaseHandler
 
     protected function delete()
     {
-        //Init the database
-        $db = (new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME))->getConnection();
-
         try {
             //Get the record from the db
-            $album = Album::getById($_GET['id'], $db);
+            $album = Album::getById($_GET['id'], $this->db);
 
             //Database magic when no errors are found
             if ($album) {
@@ -179,7 +181,7 @@ class AlbumHandler extends BaseHandler
                 $image = new Image();
 
                 //Save the record to the db
-                $album->delete($db);
+                $album->delete($this->db);
 
                 //Remove image
                 $image->delete($album->image);

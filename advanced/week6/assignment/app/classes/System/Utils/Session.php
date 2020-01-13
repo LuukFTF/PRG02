@@ -13,11 +13,11 @@ class Session
 
     /**
      * Initialize object
+     * @param array $data
      */
-    public function __construct()
+    public function __construct(array $data)
     {
-        session_start();
-        $this->data = $_SESSION;
+        $this->data = $data;
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php namespace System\Bootstrap;
 
+use System\Handlers\BaseHandler;
 use System\Utils\Session;
 use System\Utils\Logger;
 
@@ -31,7 +32,8 @@ class WebBootstrap implements BootstrapInterface
 
     public function __construct()
     {
-        $this->session = new Session();
+        session_start();
+        $this->session = new Session($_SESSION);
         $this->logger = new Logger();
         $this->setup();
     }
@@ -69,7 +71,7 @@ class WebBootstrap implements BootstrapInterface
             if (!class_exists($this->className)) {
                 throw new \Exception('Class ' . $this->className . ' does not exist!');
             }
-            /** @var $page \System\Handlers\BaseHandler */
+            /** @var $page BaseHandler */
             $page = new $this->className($this->action);
             $page->session = $this->session;
             $page->logger = $this->logger;

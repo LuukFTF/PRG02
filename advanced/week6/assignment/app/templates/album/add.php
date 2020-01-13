@@ -1,5 +1,12 @@
+<?php
+/**
+ * @var $errors array
+ * @var $success string|boolean
+ * @var $album \System\MusicCollection\Album
+ */
+?>
 <h1>Add album</h1>
-<?php if (isset($errors)): ?>
+<?php if (!empty($errors)): ?>
     <ul class="errors">
         <?php foreach ($errors as $error): ?>
             <li><?= $error; ?></li>
@@ -7,7 +14,7 @@
     </ul>
 <?php endif; ?>
 
-<?php if (isset($success)) { ?>
+<?php if ($success !== false) { ?>
     <p class="success"><?= $success; ?></p>
 <?php } ?>
 

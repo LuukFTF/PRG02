@@ -1,4 +1,10 @@
-<?php if (isset($errors)): ?>
+<?php
+/**
+ * @var $errors array
+ * @var $album \System\MusicCollection\Album
+ */
+?>
+<?php if (!empty($errors)): ?>
     <ul class="errors">
         <?php foreach ($errors as $error): ?>
             <li><?= $error; ?></li>

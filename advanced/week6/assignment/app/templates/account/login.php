@@ -1,3 +1,9 @@
+<?php
+/**
+ * @var $errors array
+ * @var $email string|boolean
+ */
+?>
 <h1>Login</h1>
 <?php if (isset($errors) && !empty($errors)) { ?>
     <ul class="errors">

@@ -1,5 +1,12 @@
+<?php
+/**
+ * @var $errors array
+ * @var $totalAlbums int
+ * @var $albums \System\MusicCollection\Album[]
+ */
+?>
 <h1>Music Collection</h1>
-<?php if (isset($errors)): ?>
+<?php if (!empty($errors)): ?>
     <ul class="errors">
         <?php foreach ($errors as $error): ?>
             <li><?= $error; ?></li>
