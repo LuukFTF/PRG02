@@ -1,8 +1,8 @@
 <?php
 // redirect when uri does not contain a id
 if(!isset($_GET['id'])) {
-    // redirect to db_connection.php
-    header('Location: db_connection.php');
+    // redirect to index.php
+    header('Location: index.php');
     exit;
 }
 
@@ -23,7 +23,7 @@ if(mysqli_num_rows($result) == 1)
 }
 else {
     // redirect when db returns no result
-    header('Location: db_connection.php');
+    header('Location: index.php');
     exit;
 }
 
