@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($db, $query);
 
         if ($result) {
-            header('Location: db_connection.php');
+            header('Location: index.php');
             exit;
         } else {
             $errors[] = 'Something went wrong in your database query: ' . mysqli_error($db);
@@ -65,11 +65,11 @@ if (isset($_POST['submit'])) {
     }
     else {
         // redirect when db returns no result
-        header('Location: db_connection.php');
+        header('Location: index.php');
         exit;
     }
 } else {
-    header('Location: db_connection.php');
+    header('Location: index.php');
     exit;
 }
 

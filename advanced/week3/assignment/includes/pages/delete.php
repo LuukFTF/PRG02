@@ -21,6 +21,6 @@ if ($album) {
     $image->delete($album->image);
 
     //Redirect to homepage after deletion & exit script
-    header("Location: db_connection.php");
+    header("Location: index.php");
     exit;
 }

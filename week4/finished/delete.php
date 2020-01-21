@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     mysqli_close($db);
 
     //Redirect to homepage after deletion & exit script
-    header("Location: db_connection.php");
+    header("Location: index.php");
     exit;
 
 } else if(isset($_GET['id'])) {
@@ -43,14 +43,14 @@ if (isset($_POST['submit'])) {
     }
     else {
         // redirect when db returns no result
-        header('Location: db_connection.php');
+        header('Location: index.php');
         exit;
     }
 } else {
     // Id was not present in the url OR the form was not submitted
 
-    // redirect to db_connection.php
-    header('Location: db_connection.php');
+    // redirect to index.php
+    header('Location: index.php');
     exit;
 }
 ?>
